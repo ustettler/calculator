@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taschenrechner</title>
+<style>
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20rem;
+        background-color: burlywood;
+    }
+.rahmen {
+background-color: black;
+height: 27vh;
+width: 60vh;
+min-height: 280px ;
+flex-wrap: wrap;
+padding-left: 1rem;
+border-radius: 1rem;
+}
+
+.display {
+    width: 95%;
+    height: 40px;
+    background-color: bisque;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 2rem;
+}
+
+.button {
+    width: 23%;
+    height: 30%;
+    margin-bottom: .2rem;
+    margin-left: .1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 2rem;
+border-radius: 5px;
+color: black;
+}
+
+.button:hover {
+    background-color: wheat;
+    cursor: pointer;
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <div class="rahmen">
+<form>
+    <input type="text" name="Display" class="display">
+
+    <input type="button" width="60" class="button" value="  7   " onClick="Hinzufuegen('7')">
+    <input type="button" width="60" class="button" value="  8   " onClick="Hinzufuegen('8')">
+    <input type="button" width="60" class="button" value="  9   " onClick="Hinzufuegen('9')">
+    <input type="button" width="60" class="button" value="  /   " onClick="Hinzufuegen('/')">
+
+    <input type="button" width="60" class="button" value="  4   " onClick="Hinzufuegen('4')">
+    <input type="button" width="60" class="button" value="  5  " onClick="Hinzufuegen('5')">
+    <input type="button" width="60" class="button" value="  6   " onClick="Hinzufuegen('6')">
+    <input type="button" width="60" class="button" value="  *  " onClick="Hinzufuegen('*')">
+
+    <input type="button" width="60" class="button" value="  1   " onClick="Hinzufuegen('1')">
+    <input type="button" width="60" class="button" value="  2  " onClick="Hinzufuegen('2')">
+    <input type="button" width="60" class="button" value="  3  " onClick="Hinzufuegen('3')">
+    <input type="button" width="60" class="button" value="  -  " onClick="Hinzufuegen('-')">
+
+    <input type="button" width="60" class="button" value="  0  " onClick="Ergebnis()">
+    <input type="button" width="60" class="button" value="  .   " onClick="Hinzufuegen('.')">
+    <input type="button" width="60" class="button" value="  =   " onClick="Hinzufuegen('=')">
+    <input type="button" width="60" class="button" value="  +   " onClick="Hinzufuegen('+')">
+</form>
+    </div>
+
+    <script src="rechner.js"></script>
+</body>
+</html>
