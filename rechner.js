@@ -1,9 +1,10 @@
 console.log("Calculator")
-// selekti
+// selektieren
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 let display = document.querySelector(".display");
+let button = document.querySelector(".button");
 
 // Rechen aufgabe besteht aus. -zahlt operatot zahl-
 // Hier werden 1. und 2. zahl ausgelesen
@@ -21,8 +22,9 @@ function addNumber(number){
 
 }
 
-// operator geht erst wenn die 1. nummer exisiert
+// Operator geht erst wenn die 1. nummer exisiert
 // wenn 1, nummer existiert, schreibe den operator hinein
+
 function addOperator(op){
 
     if(firstNumber == ""){
@@ -44,10 +46,12 @@ function showResult() {
             var result = Number(firstNumber) * Number(secondNumber )
             display.value = result
             break;
+
         case '+':
             var result = Number(firstNumber) + Number(secondNumber)
             display.value = result
             break;
+
         case '-':
             var result = Number(firstNumber) - Number(secondNumber)
             display.value = result
@@ -60,13 +64,31 @@ function showResult() {
         
     }
 
+        console.log("Resultat: " + result)
+
+     // Nach erhalt von Resultat Input leeren und neue Rechnung schreiben
+        button.addEventListener("click", () => {
+
+        if(result != ""){
+            result = "";
+            console.log("Resultat2: " + result)
+        } else {
+            console.log("Resultat3: " + result)
+            return
+        }
+
+    })
+
+    // Alles leeren
     firstNumber = "";
     secondNumber = "";
     operator = "";
 
-
-
 }
+
+
+
+
 
 // Display leeren vor neuer Operation
 
