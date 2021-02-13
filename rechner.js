@@ -12,6 +12,7 @@ let button = document.querySelector(".button");
 function addNumber(number){
     console.log(number)
 
+
     if(operator == ""){
         display.value += number
         firstNumber += number
@@ -61,15 +62,17 @@ function showResult() {
             var result = Number(firstNumber) / Number(secondNumber)
             display.value = result
             break;
-        
+
     }
+
 
         console.log("Resultat: " + result)
 
-     // Nach erhalt von Resultat Input leeren und neue Rechnung schreiben
-        button.addEventListener("click", () => {
+     // Nach erhalt vom Resultat, neue Zahl drücken, Display leeren und neue Rechnung schreiben
+       button.addEventListener("click", () => {
 
-        if(result != ""){
+        if(result !== ""){
+            display.value = "";
             result = "";
             console.log("Resultat2: " + result)
         } else {
