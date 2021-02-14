@@ -10,8 +10,10 @@ let button = document.querySelector(".button");
 // Hier werden 1. und 2. zahl ausgelesen
 // Wenn operator leer ist, ist es erste zahl, wenn es ein operator gibt, zweitezahl
 function addNumber(number){
-    console.log(number)
+    console.log("nummer: " + number)
 
+    // display leeren
+    display.value = "";
 
     if(operator == ""){
         display.value += number
@@ -69,7 +71,7 @@ function showResult() {
         console.log("Resultat: " + result)
 
      // Nach erhalt vom Resultat, neue Zahl drücken, Display leeren und neue Rechnung schreiben
-       button.addEventListener("click", () => {
+    /*    button.addEventListener("click", () => {
 
         if(result !== ""){
             display.value = "";
@@ -80,22 +82,17 @@ function showResult() {
             return
         }
 
-    })
+    }) */
 
     // Alles leeren
     firstNumber = "";
     secondNumber = "";
     operator = "";
-
 }
 
+/* Fragen :
+Wiso funktioniert es nur mit der ersten Button klasse
+Unterschied Var Let
+Wiso geht input leere so nicht
 
-
-
-
-// Display leeren vor neuer Operation
-
-/* display.addEventListener("click", () => {
-display.value = ""
-}) */
-
+zusätzlich dazu, display leeren, abstand zwischen zahl und op*/
