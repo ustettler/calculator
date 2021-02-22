@@ -5,6 +5,7 @@ let operator = "";
 let secondNumber = "";
 let display = document.querySelector(".display");
 let button = document.querySelector(".button");
+let endResult = ""
 
 // Rechen aufgabe besteht aus. -zahlt operatot zahl-
 // Hier werden 1. und 2. zahl ausgelesen
@@ -12,8 +13,10 @@ let button = document.querySelector(".button");
 function addNumber(number){
     console.log("nummer: " + number)
 
-    // display leeren
-    display.value = "";
+    if (endResult !== ""){
+        display.value = ""
+        endResult = ""
+    }
 
     if(operator == ""){
         display.value += number
@@ -44,55 +47,38 @@ function addOperator(op){
 // Achtung, geht nur mit VAR!!
 
 function showResult() {
+    let result = ""
     switch (operator) {
         case '*':
-            var result = Number(firstNumber) * Number(secondNumber )
+            result = Number(firstNumber) * Number(secondNumber )
             display.value = result
             break;
 
         case '+':
-            var result = Number(firstNumber) + Number(secondNumber)
+            result = Number(firstNumber) + Number(secondNumber)
             display.value = result
             break;
 
         case '-':
-            var result = Number(firstNumber) - Number(secondNumber)
+            result = Number(firstNumber) - Number(secondNumber)
             display.value = result
             break;
 
         case '/':
-            var result = Number(firstNumber) / Number(secondNumber)
+            result = Number(firstNumber) / Number(secondNumber)
             display.value = result
             break;
 
     }
 
+    endResult = result
+
+
 
         console.log("Resultat: " + result)
-
-     // Nach erhalt vom Resultat, neue Zahl drücken, Display leeren und neue Rechnung schreiben
-    /*    button.addEventListener("click", () => {
-
-        if(result !== ""){
-            display.value = "";
-            result = "";
-            console.log("Resultat2: " + result)
-        } else {
-            console.log("Resultat3: " + result)
-            return
-        }
-
-    }) */
 
     // Alles leeren
     firstNumber = "";
     secondNumber = "";
     operator = "";
 }
-
-/* Fragen :
-Wiso funktioniert es nur mit der ersten Button klasse
-Unterschied Var Let
-Wiso geht input leere so nicht
-
-zusätzlich dazu, display leeren, abstand zwischen zahl und op*/
