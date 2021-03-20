@@ -1,89 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taschenrechner</title>
-<style>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Taschenrechner</title>
+		<style>
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 20rem;
+				background-color: burlywood;
+			}
+			.rahmen {
+				background-color: black;
+				height: 27vh;
+				width: 60vh;
+				min-height: 280px;
+				flex-wrap: wrap;
+				padding-left: 1rem;
+				border-radius: 1rem;
+			}
 
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20rem;
-        background-color: burlywood;
-    }
-.rahmen {
-background-color: black;
-height: 27vh;
-width: 60vh;
-min-height: 280px ;
-flex-wrap: wrap;
-padding-left: 1rem;
-border-radius: 1rem;
-}
+			.display {
+				width: 95%;
+				height: 40px;
+				background-color: bisque;
+				margin-bottom: 1rem;
+				margin-top: 1rem;
+				font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+				font-size: 2rem;
+			}
 
-.display {
-    width: 95%;
-    height: 40px;
-    background-color: bisque;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 2rem;
-}
+			.button {
+				width: 23%;
+				height: 30%;
+				margin-bottom: 0.2rem;
+				margin-left: 0.1rem;
+				font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+				font-size: 2rem;
+				border-radius: 5px;
+				color: black;
+			}
 
-.button {
-    width: 23%;
-    height: 30%;
-    margin-bottom: .2rem;
-    margin-left: .1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 2rem;
-border-radius: 5px;
-color: black;
-}
+			.button:hover {
+				background-color: wheat;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rahmen">
+			<form>
+				<input type="text" name="Display" class="display" />
 
-.button:hover {
-    background-color: wheat;
-    cursor: pointer;
-}
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  7   "
+					onClick="addNumber('7')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  8   "
+					onClick="addNumber('8')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  9   "
+					onClick="addNumber('9')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  /   "
+					onClick="addOperator('/')"
+				/>
 
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  4   "
+					onClick="addNumber('4')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  5  "
+					onClick="addNumber('5')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  6   "
+					onClick="addNumber('6')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  *  "
+					onClick="addOperator('*')"
+				/>
 
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  1   "
+					onClick="addNumber('1')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  2  "
+					onClick="addNumber('2')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  3  "
+					onClick="addNumber('3')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  -  "
+					onClick="addOperator('-')"
+				/>
 
-</style>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  0  "
+					onClick="addNumber('0')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  .   "
+					onClick="addNumber('.')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  =   "
+					onClick="showResult('=')"
+				/>
+				<input
+					type="button"
+					width="60"
+					class="button"
+					value="  +   "
+					onClick="addOperator('+')"
+				/>
+				<p
+					style="
+						text-align: center;
+						font-family: Verdana, Geneva, Tahoma, sans-serif;
+					"
+				>
+					<br />
+					GitHub: https://github.com/ustettler/calculator
+				</p>
+			</form>
+		</div>
 
-</head>
-<body>
-    <div class="rahmen">
-<form>
-    <input type="text" name="Display" class="display">
-
-    <input type="button" width="60" class="button" value="  7   " onClick="addNumber('7')">
-    <input type="button" width="60" class="button" value="  8   " onClick="addNumber('8')">
-    <input type="button" width="60" class="button" value="  9   " onClick="addNumber('9')">
-    <input type="button" width="60" class="button" value="  /   " onClick="addOperator('/')">
-
-    <input type="button" width="60" class="button" value="  4   " onClick="addNumber('4')">
-    <input type="button" width="60" class="button" value="  5  " onClick="addNumber('5')">
-    <input type="button" width="60" class="button" value="  6   " onClick="addNumber('6')">
-    <input type="button" width="60" class="button" value="  *  " onClick="addOperator('*')">
-
-    <input type="button" width="60" class="button" value="  1   " onClick="addNumber('1')">
-    <input type="button" width="60" class="button" value="  2  " onClick="addNumber('2')">
-    <input type="button" width="60" class="button" value="  3  " onClick="addNumber('3')">
-    <input type="button" width="60" class="button" value="  -  " onClick="addOperator('-')">
-
-    <input type="button" width="60" class="button" value="  0  " onClick="addNumber('0')">
-    <input type="button" width="60" class="button" value="  .   " onClick="addNumber('.')">
-    <input type="button" width="60" class="button" value="  =   " onClick="showResult('=')">
-    <input type="button" width="60" class="button" value="  +   " onClick="addOperator('+')">
-    <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"> <br> GitHub: https://github.com/ustettler/calculator</p>
-</form>
-    </div>
-
-    <script src="rechner.js"></script>
-
-
-</body>
+		<script src="rechner.js"></script>
+	</body>
 </html>
